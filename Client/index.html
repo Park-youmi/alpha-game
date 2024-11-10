@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동물 게임</title>
+    <link rel="stylesheet" href="styles.css"> <!-- CSS 파일 링크 -->
+</head>
+<body>
+    <div id="logo">
+        <img src="images/logo.png" alt="로고 이미지" style="width: 300px;"/>
+    </div>
+
+    <!-- 로그인 폼 추가 -->
+    <div id="login-form">
+        <h2>로그인</h2>
+        <input type="text" id="student-id" placeholder="학번" required />
+        <input type="text" id="student-name" placeholder="이름" required />
+        <button onclick="login()">로그인</button>
+        <div id="login-status"></div>
+    </div>
+
+    <div id="animal-selection" style="display: none;">
+        <div class="selection-box">
+            <h2>동물 선택</h2>
+            <div class="animal-container">
+                <div class="animal-card" onclick="startGame('플라밍고 드래곤')">
+                    <img src="images/flamingo_dragon.png" alt="플라밍고 드래곤" />
+                    <span class="animal-name">플라밍고 드래곤</span>
+                    <span class="difficulty">쉬움</span>
+                </div>
+                <div class="animal-card" onclick="startGame('구름 사슴')">
+                    <img src="images/cloud_deer.png" alt="구름 사슴" />
+                    <span class="animal-name">구름 사슴</span>
+                    <span class="difficulty">보통</span>
+                </div>
+                <div class="animal-card" onclick="startGame('기계 토끼')">
+                    <img src="images/mechanical_rabbit.png" alt="기계 토끼" />
+                    <span class="animal-name">기계 토끼</span>
+                    <span class="difficulty">어려움</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-play" style="display: none;">
+        <div class="animal-display">
+            <img id="animal-image" src="" alt="">
+            <h2 id="animal-name"></h2>
+        </div>
+        <div id="food-options" style="position: absolute; top: 250px; width: 100%; z-index: 2;"></div>
+        <div id="status" style="position: absolute; top: 220px; width: 100%; z-index: 2;"></div>
+        <button id="end-game-button" onclick="endGame()" style="position: absolute; top: 400px; left: 50%; transform: translateX(-50%); z-index: 2;">게임 종료</button>
+    </div>
+
+    <script src="script.js"></script> <!-- JavaScript 파일 링크 -->
+</body>
+</html>
