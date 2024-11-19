@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #C5C0FF; /* 배경색을 #C5C0FF로 변경 */
+}
+
+#logo {
+    margin: 0; /* 로고와 상단 간격을 0으로 설정하여 더욱 가깝게 */
+}
+
+#animal-selection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 상단 정렬로 변경하여 네모를 더 위로 올림 */
+    height: calc(100vh - 50px); /* 화면 중앙에 위치, 여백 조정 */
+}
+
+.selection-box {
+    background-color: white;
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 30px; /* 패딩 증가 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    width: 700px; /* 가로로 긴 직사각형 너비 증가 */
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.animal-container {
+    display: flex; /* 동물 카드를 가로로 배치 */
+    justify-content: space-around; /* 카드 사이의 간격 조정 */
+}
+
+.animal-card {
+    margin: 15px; /* 카드 간격 증가 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: transform 0.2s; /* 호버 효과 */
+    text-align: center;
+    width: 120px; /* 동물 카드 너비 증가 */
+}
+
+.animal-card img {
+    width: 120px; /* 동물 이미지 크기 증가 */
+    height: auto;
+}
+
+.animal-card:hover {
+    transform: scale(1.1); /* 마우스 오버 시 확대 효과 */
+}
+
+.animal-name {
+    display: inline-block;
+    background-color: #466093; /* 동그라미 색상 */
+    color: white; /* 하얀색 글씨 */
+    padding: 10px 20px; /* 패딩 추가 */
+    border-radius: 50px; /* 동그라미 모양 */
+    font-size: 18px; /* 글자 크기 */
+    font-weight: bold; /* 글자 두껍게 */
+    margin-top: 10px; /* 카드와의 간격 */
+    transition: background-color 0.3s; /* 배경색 변경 효과 */
+    white-space: nowrap; /* 텍스트가 줄 바꿈되지 않도록 설정 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis; /* 넘치는 부분에 대한 생략 부호 표시 */
+}
+
+.animal-card:hover .animal-name {
+    background-color: #3A4E7A; /* 마우스 오버 시 어두운 색으로 변경 */
+}
+
+.difficulty {
+    display: block; /* 새로운 줄에서 표시 */
+    font-size: 14px; /* 글자 크기 */
+    color: #666; /* 색상 */
+    margin-top: 5px; /* 간격 */
+}
+
+.animal-display {
+    position: relative; /* 자식 요소에 대한 상대 위치 설정 */
+    background-color: white; /* 배경색을 하얀색으로 설정 */
+    border-radius: 10px; /* 둥근 모서리 */
+    padding: 20px; /* 패딩 추가 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    width: 600px; /* 가로 너비 늘리기 */
+    height: 400px; /* 세로 높이 늘리기 */
+    margin: 0 auto; /* 중앙 정렬 */
+    z-index: 1; /* 다른 요소 위에 나타나도록 설정 */
+}
+
+#animal-image {
+    width: 200px; /* 원하는 너비로 조정 */
+    height: auto; /* 비율 유지 */
+}
+
+
+#game-play {
+    position: relative; /* 상대 위치 설정 */
+    z-index: 0; /* 동물 선택 화면보다 뒤로 이동 */
+}
+
+.animal-display img {
+    width: 100px; /* 이미지 크기 조정 */
+    height: auto;
+}
+
+.animal-display h2 {
+    position: absolute; /* 절대 위치 설정 */
+    top: 10px; /* 위쪽 위치 */
+    left: 15%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬 조정 */
+    color: #333; /* 텍스트 색상 */
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 배경 */
+    padding: 5px; /* 패딩 추가 */
+    border-radius: 5px; /* 둥글게 */
+}
+
+#food-options {
+    display: flex; /* flexbox 사용 */
+    justify-content: center; /* 가운데 정렬 */
+    position: absolute; /* 절대 위치 설정 */
+    top: 250px; /* 네모 아래로 위치 조정 */
+    width: 100%; /* 전체 너비 사용 */
+    z-index: 2; /* 네모 위에 표시 */
+}
+
+.food-card {
+    display: flex; /* flexbox 사용 */
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center; /* 중앙 정렬 */
+    background-color: white; /* 배경색 흰색 */
+    border: 2px solid #333; /* 두꺼운 진한 테두리 (두께: 2px, 색상: 어두운 회색) */
+    border-radius: 10px; /* 둥근 모서리 */
+    margin: 10px; /* 카드 간격 */
+    padding: 10px; /* 패딩 추가 */
+    cursor: pointer; /* 클릭 가능하게 설정 */
+    transition: transform 0.2s; /* 호버 효과 */
+}
+
+.food-card:hover {
+    transform: scale(1.05); /* 마우스 오버 시 확대 효과 */
+}
+
+.food-image {
+    width: 80px; /* 이미지 크기 조정 */
+    height: auto; /* 비율 유지 */
+}
+
+.food-name {
+    margin-top: 5px; /* 간격 설정 */
+    font-size: 14px; /* 글자 크기 */
+    color: #333; /* 글자 색상 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#login-form input {
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+#login-form button {
+    padding: 10px 20px;
+}
