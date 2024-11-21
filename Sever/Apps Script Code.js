@@ -80,7 +80,9 @@ function logEvent(eventId, studentId, studentName, additionalInfo) {
         4: "먹이 주기",
         5: "성장",
         6: "게임 종료",
-        7: "오류 발생"
+        7: "오류 발생",
+        8: "최종 성장",
+        9: "게임 오버"
     };
     const eventType = eventTypeMap[eventId] || "알 수 없는 이벤트";
 
